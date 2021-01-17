@@ -1,0 +1,35 @@
+{
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "grammars": [
+            {
+                "language": "anew",
+                "path": "./syntaxes/anew.tmLanguage.json",
+                "scopeName": "source.anew"
+            }
+        ],
+        "languages": [
+            {
+                "aliases": [
+                    "Anew",
+                    "anew"
+                ],
+                "configuration": "./language-configuration.json",
+                "extensions": [
+                    ".anew",
+                    ".an"
+                ],
+                "id": "anew"
+            }
+        ]
+    },
+    "description": "Anew Language Syntax",
+    "displayName": "Anew Syntax",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "name": "anew-grammar",
+    "version": "0.0.1"
+}

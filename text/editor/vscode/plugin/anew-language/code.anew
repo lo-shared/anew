@@ -1,0 +1,20 @@
+::  Use number string string! {
+	`Add` n`1.0` s`::`,
+	Add n`2.0` s`a1`
+	Add $$ -> List (:OnEach s`a2` s`a2`)
+	Add $$ s`a3`
+	Add $$ s`a4`,
+	Add n`6.0` [s`a7`, s`a8`,] #string.
+
+	$OnEach a1 a2. $ a1 + a2.
+	$OnSome a1 a2. $ a1 + a2.
+	*n1's n`1`.
+	*s1's s`s`.
+}
+
+::  Add number string. {
+	string + number.
+}
+
+:: *string `A String`.
+:: *number `A Number`.

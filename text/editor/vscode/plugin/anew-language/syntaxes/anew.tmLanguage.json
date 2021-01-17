@@ -1,0 +1,446 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "anew",
+	"patterns": [
+		{
+			"include": "#1-*"
+		},
+		{
+			"include": "#2-*"
+		},
+		{
+			"include": "#3-*"
+		},
+		{
+			"include": "#4-*"
+		}
+	],
+	"repository": {
+		"1-!": {
+			"patterns": [
+				{
+					"include": "#1-*"
+				},
+				{
+					"include": "#2-!"
+				}
+			]
+		},
+		"1-*": {
+			"patterns": [
+				{
+					"include": "#1-1"
+				},
+				{
+					"include": "#1-2"
+				},
+				{
+					"include": "#1-3"
+				},
+				{
+					"include": "#1-4"
+				},
+				{
+					"include": "#1-5"
+				},
+				{
+					"include": "#1-6"
+				}
+			]
+		},
+		"1-1": {
+			"patterns": [
+				{
+					"match": "[|][-]",
+					"name": "keyword.control.atop.internal.anew"
+				},
+				{
+					"match": "[|][+]",
+					"name": "keyword.control.atop.external.anew"
+				},
+				{
+					"match": "[|][*]",
+					"name": "keyword.control.atop.functor.anew"
+				}
+			]
+		},
+		"1-2": {},
+		"1-3": {},
+		"1-4": {},
+		"1-5": {},
+		"1-6": {},
+		"2-!": {
+			"patterns": [
+				{
+					"include": "#2-*"
+				},
+				{
+					"include": "#3-!"
+				}
+			]
+		},
+		"2-*": {
+			"patterns": [
+				{
+					"include": "#2-1"
+				},
+				{
+					"include": "#2-2"
+				},
+				{
+					"include": "#2-3"
+				},
+				{
+					"include": "#2-4"
+				},
+				{
+					"include": "#2-5"
+				},
+				{
+					"include": "#2-6"
+				}
+			]
+		},
+		"2-1": {
+			"patterns": [
+				{
+					"begin": "[\"]",
+					"end": "[\"]",
+					"name": "entity.name.aquire.anew",
+					"patterns": [
+						{
+							"match": "[^\\p{P}\\p{S}]+",
+							"name": "entity.name.aquire.anew"
+						},
+						{
+							"match": "[ ]+",
+							"name": "entity.name.aquire.anew"
+						},
+						{
+							"match": ".",
+							"name": "invalid.illegal.aquire.anew"
+						}
+					]
+				},
+				{
+					"match": "[^\\p{P}\\p{S}\\p{Z}]+",
+					"name": "variable.name.extant.anew"
+				},
+				{
+					"match": "[_]",
+					"name": "variable.name.exists.anew"
+				}
+			]
+		},
+		"2-2": {
+			"patterns": [
+				{
+					"match": "[`][`]",
+					"name": "constant.language.unit.anew"
+				},
+				{
+					"match": "[`][-+][`]",
+					"name": "constant.language.bool.anew"
+				},
+				{
+					"begin": "[`][-+]",
+					"end": "[`]",
+					"name": "constant.numeric.numerical.brackets.anew",
+					"patterns": [
+						{
+							"match": "[,]",
+							"name": "constant.numeric.numerical.scission.anew"
+						},
+						{
+							"match": "[.]",
+							"name": "constant.numeric.numerical.fraction.anew"
+						},
+						{
+							"match": "[0-9]+",
+							"name": "constant.numeric.numerical.main.anew"
+						},
+						{
+							"match": ".",
+							"name": "invalid.illegal.numerical.anew"
+						}
+					]
+				},
+				{
+					"begin": "[`][#]",
+					"end": "[`]",
+					"name": "string.character.brackets.anew",
+					"patterns": [
+						{
+							"match": "[\\p{P}]+",
+							"name": "string.character.unicode.p.anew"
+						},
+						{
+							"match": "[\\p{S}]+",
+							"name": "string.character.unicode.s.anew"
+						},
+						{
+							"match": "[\\p{Z}]+",
+							"name": "string.character.unicode.z.anew"
+						},
+						{
+							"match": "[0-9]+",
+							"name": "string.character.numerical.anew"
+						},
+						{
+							"match": "[^\\p{P}\\p{S}\\p{Z}]+",
+							"name": "string.character.main.anew"
+						},
+						{
+							"match": ".",
+							"name": "invalid.illegal.character.anew"
+						}
+					]
+				}
+			]
+		},
+		"2-3": {
+			"patterns": [
+				{
+					"begin": "[(]",
+					"end": "[)]",
+					"name": "keyword.control.data.brackets.anew",
+					"patterns": [
+						{
+							"include": "#2-!"
+						}
+					]
+				},
+				{
+					"begin": "[\\[][.][.]",
+					"end": "[\\]]",
+					"name": "keyword.control.data.list.brackets.anew",
+					"patterns": [
+						{
+							"match": "[ ]?[;][ ]?",
+							"name": "keyword.control.data.list.saparator.asyn.anew"
+						},
+						{
+							"match": "[ ]?[,][ ]?",
+							"name": "keyword.control.data.list.saparator.sync.anew"
+						},
+						{
+							"include": "#2-!"
+						}
+					]
+				},
+				{
+					"begin": "[\\[][:][:]",
+					"end": "[\\]]",
+					"name": "keyword.control.data.sample.brackets.anew",
+					"patterns": [
+						{
+							"match": "[ ]?[;][ ]?",
+							"name": "keyword.control.data.sample.saparator.asyn.anew"
+						},
+						{
+							"match": "[ ]?[,][ ]?",
+							"name": "keyword.control.data.sample.saparator.sync.anew"
+						},
+						{
+							"include": "#2-!"
+						}
+					]
+				},
+				{
+					"begin": "[\\[][;][;]",
+					"end": "[\\]]",
+					"name": "keyword.control.data.record.brackets.anew",
+					"patterns": [
+						{
+							"match": "[ ]?[;][ ]?",
+							"name": "keyword.control.data.record.saparator.asyn.anew"
+						},
+						{
+							"match": "[ ]?[,][ ]?",
+							"name": "keyword.control.data.record.saparator.sync.anew"
+						},
+						{
+							"include": "#2-!"
+						}
+					]
+				}
+			]
+		},
+		"2-4": {
+			"patterns": [
+				{
+					"begin": "[-][{]",
+					"end": "[}][-]",
+					"name": "comment.block.ignore.brackets.anews",
+					"patterns": [
+						{
+							"match": ".",
+							"name": "invalid.illegal.ignore.anew"
+						}
+					]
+				}
+			]
+		},
+		"2-5": {
+			"patterns": [
+				{
+					"match": "[ ]?[<][-][>][ ]?",
+					"name": "keyword.control.operator.data.anew"
+				},
+				{
+					"match": "[ ]?[<][-][ ]?",
+					"name": "keyword.control.operator.data.anew"
+				},
+				{
+					"match": "[ ]?[-][>][ ]?",
+					"name": "keyword.control.operator.data.anew"
+				},
+				{
+					"match": "[ ]?[-][-][ ]?",
+					"name": "keyword.control.operator.data.decrease.anew"
+				},
+				{
+					"match": "[ ]?[+][+][ ]?",
+					"name": "keyword.control.operator.data.increase.anew"
+				},
+				{
+					"match": "[ ]?[-][ ]?",
+					"name": "keyword.control.operator.data.pull.anew"
+				},
+				{
+					"match": "[ ]?[+][ ]?",
+					"name": "keyword.control.operator.data.push.anew"
+				},
+				{
+					"match": "[ ]?[=][ ]?",
+					"name": "keyword.control.operator.data.same.anew"
+				},
+				{
+					"match": "[ ]?[~][ ]?",
+					"name": "keyword.control.operator.type.same.anew"
+				},
+				{
+					"match": "[ ]?[:][ ]?",
+					"name": "keyword.control.operator.type.sure.anew"
+				},
+				{
+					"match": "[ ]?[@][ ]?",
+					"name": "keyword.control.operator.data.at.anew"
+				},
+				{
+					"match": "[ ]?[$][ ]?",
+					"name": "keyword.control.operator.data.is.anew"
+				}
+			]
+		},
+		"2-6": {
+			"patterns": [
+				{
+					"match": "[,][ ]?",
+					"name": "keyword.control.operator.expression.separator.anew"
+				},
+				{
+					"match": "[?][ ]?",
+					"name": "keyword.control.operator.expression.question.anew"
+				},
+				{
+					"match": "[!][ ]?",
+					"name": "keyword.control.operator.expression.answered.anew"
+				},
+				{
+					"match": "[.]",
+					"name": "keyword.control.operator.expression.complete.anew"
+				},
+				{
+					"match": "[']",
+					"name": "keyword.control.operator.synonyms.anew"
+				},
+				{
+					"match": "[ ]",
+					"name": "keyword.control.operator.give.anew"
+				}
+			]
+		},
+		"3-!": {
+			"patterns": [
+				{
+					"include": "#3-*"
+				},
+				{
+					"include": "#4-!"
+				}
+			]
+		},
+		"3-*": {
+			"patterns": [
+				{
+					"include": "#3-1"
+				},
+				{
+					"include": "#3-2"
+				},
+				{
+					"include": "#3-3"
+				},
+				{
+					"include": "#3-4"
+				},
+				{
+					"include": "#3-5"
+				},
+				{
+					"include": "#3-6"
+				}
+			]
+		},
+		"3-1": {},
+		"3-2": {},
+		"3-3": {},
+		"3-4": {},
+		"3-5": {},
+		"3-6": {},
+		"4-!": {
+			"patterns": [
+				{
+					"include": "#4-*"
+				}
+			]
+		},
+		"4-*": {
+			"patterns": [
+				{
+					"include": "#4-1"
+				},
+				{
+					"include": "#4-2"
+				},
+				{
+					"include": "#4-3"
+				},
+				{
+					"include": "#4-4"
+				},
+				{
+					"include": "#4-5"
+				},
+				{
+					"include": "#4-6"
+				}
+			]
+		},
+		"4-1": {},
+		"4-2": {},
+		"4-3": {},
+		"4-4": {},
+		"4-5": {},
+		"4-6": {
+			"patterns": [
+				{
+					"match": ".",
+					"name": "invalid.illegal.anew"
+				}
+			]
+		}
+	},
+	"scopeName": "source.anew"
+}

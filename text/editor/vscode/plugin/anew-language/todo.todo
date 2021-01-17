@@ -1,0 +1,13 @@
+☐ "aaaa" Run Something forever.
+☐ 'aaaa' Variable name.
+☐ '-' will be used for alias, `-some` means same file.
+☐ All the operators with start with |.
+
+☐ Tilde For Range like 1~10 means 1 to 10, ~5 means greater then 5.
+☐ | will be used to replace newlines.
+☐ \/ will be used for composition.
+☐ Search match by | for type is faster then ?!.
+☐ Inline functions bracets.
+☐ Use hyphen for type association.
+☐ Use + for constants
+☐ Operators can be used as function if put inside '.

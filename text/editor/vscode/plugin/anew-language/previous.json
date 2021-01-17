@@ -1,0 +1,210 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "anew",
+	"patterns": [
+		{
+			"include": "#1"
+		},
+		{
+			"include": "#2"
+		},
+		{
+			"include": "#3"
+		}
+	],
+	"repository": {
+		"1": {
+			"patterns": []
+		},
+		"2": {
+			"patterns": [
+				{
+					"include": "#a"
+				},
+				{
+					"include": "#b"
+				},
+				{
+					"include": "#c"
+				},
+				{
+					"include": "#d"
+				},
+				{
+					"include": "#e"
+				},
+				{
+					"include": "#n"
+				},
+				{
+					"include": "#o"
+				},
+				{
+					"include": "#z"
+				}
+			]
+		},
+		"3": {},
+		"a": {
+			"patterns": [
+				{
+					"include": "#a-none"
+				}
+			]
+		},
+		"a-none": {
+			"begin": "[-][{]",
+			"end": "[}][-]",
+			"name": "comment.block.ignore.anew"
+		},
+		"b": {
+			"patterns": [
+				{
+					"begin": "[`][-+]",
+					"end": "[`]",
+					"name": "constant.numeric.anew",
+					"patterns": [
+						{
+							"match": "[0-9]+",
+							"name": "constant.numeric.anew"
+						},
+						{
+							"match": "[.]",
+							"name": "constant.numeric.anew"
+						}
+					]
+				},
+				{
+					"begin": "[`][@]",
+					"end": "[`]",
+					"name": "string.anew",
+					"patterns": [
+						{
+							"match": "[\\s]+",
+							"name": "string.anew"
+						},
+						{
+							"match": "[\\S]+",
+							"name": "string.anew"
+						}
+					]
+				}
+			]
+		},
+		"c": {},
+		"d": {},
+		"e": {
+			"patterns": [
+				{
+					"include": "#e-some"
+				}
+			]
+		},
+		"e-some": {
+			"begin": "[a][`]",
+			"end": "[`]",
+			"name": "string.enum.anew",
+			"patterns": [
+				{
+					"match": "[`][`][.]",
+					"name": "constant.character.escape.anew"
+				}
+			]
+		},
+		"n": {
+			"patterns": [
+				{
+					"include": "#n-aquire"
+				},
+				{
+					"include": "#n-assign"
+				},
+				{
+					"include": "#n-derive"
+				},
+				{
+					"include": "#n-create"
+				}
+			]
+		},
+		"n-aquire": {
+			"patterns": [
+				{
+					"match": "[`][\\s\\S]+?[`]",
+					"name": "entity.name.function.aquire.anew"
+				}
+			]
+		},
+		"n-assign": {
+			"patterns": [
+				{
+					"match": "[-*][^\\p{P}\\p{S}\\p{Z}\\s]+",
+					"name": "entity.name.function.assign.anew"
+				}
+			]
+		},
+		"n-derive": {
+			"patterns": [
+				{
+					"match": "[^\\p{P}\\p{S}\\p{Z}\\s]+",
+					"name": "variable.name.derive.anew"
+				}
+			]
+		},
+		"n-create": {
+			"patterns": [
+				{
+					"match": "[#][^\\p{P}\\p{S}\\p{Z}\\s]+",
+					"name": "variable.name.create.anew"
+				}
+			]
+		},
+		"o": {
+			"patterns": [
+				{
+					"include": "#o-operators"
+				}
+			]
+		},
+		"o-operators": {
+			"patterns": [
+				{
+					"match": "[ ][$][$][ ]",
+					"name": "keyword.control.preceding.phrase.data.anew"
+				},
+				{
+					"match": "[ ][@][@][ ]",
+					"name": "keyword.control.following.phrase.data.anew"
+				},
+				{
+					"match": "[ ][#][ ]",
+					"name": "keyword.control.continued.phrase.data.anew"
+				},
+				{
+					"match": "[ ][$][ ]",
+					"name": "keyword.control.continued.phrase.data.anew"
+				},
+				{
+					"match": "[ ][*][ ]",
+					"name": "keyword.control.continued.phrase.data.anew"
+				}
+			]
+		},
+		"z": {
+			"patterns": [
+				{
+					"include": "#z-none"
+				}
+			]
+		},
+		"z-none": {
+			"patterns": [
+				{
+					"match": ".",
+					"name": "invalid.illegal.anew"
+				}
+			]
+		}
+	},
+	"scopeName": "source.anew"
+}
